@@ -40,7 +40,10 @@ const getSplits= async (req,res)=>{
  const deleteSplits=async(req,res)=>{
     try {
         const {id}=req.params
-        const {error}=await deleteSplit(id);
+        const user_id=req.user.id
+        const {data,error}=await deleteSplit(id,user_id);
+        console.log(data);
+        
         if(error) throw error
         res.json({
             message:"deleted sucessfully"

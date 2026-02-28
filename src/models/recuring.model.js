@@ -7,8 +7,9 @@ exports.createRecurringPayment = async (data) => {
 };
 
 // GET ALL
-exports.getRecurringPayments = async () => {
-  return await supabase.from("recurring_payment").select("*");
+exports.getRecurringPayments = async (user_id) => {
+  return await supabase.from("recurring_payment").select("*")
+  .eq("user_id",user_id)
 };
 
 // UPDATE

@@ -27,12 +27,23 @@ exports.createRecurring = async (req, res) => {
 
 // GET ALL
 exports.getRecurring = async (req, res) => {
-  const { data, error } = await recurringModel.getRecurringPayments();
-
+  try {
+     const user_id=req.user.id;
+  const { data, error } = await recurringModel.getRecurringPayments(user_id);
   if (error) return res.status(500).json(error);
-
-  res.json(data);
+  res.json(data)
+    
+  } catch (error) {
+     res.status(500).json({
+      error:error.message
+     })
 };
+    
+  }
+   
+
+
+ 
 
 // UPDATE
 exports.updateRecurring = async (req, res) => {
