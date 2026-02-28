@@ -5,16 +5,18 @@ const createSplit=async (data)=>{
     .insert([data])
     .select();
 };
-const getSplit=async()=>{
+const getSplit=async(use_id)=>{
     return await supabase
     .from("expense_splits")
     .select("*")
+    .eq("user_id",use_id)
 
 };
-const deleteSplit=async(id)=>{
+const deleteSplit=async(id,user_id)=>{
     return await supabase
     .from("expense_splits")
     .delete()
     .eq("id",id)
+    .eq("user_id",user_id)
 };
 module.exports={createSplit,getSplit,deleteSplit}
