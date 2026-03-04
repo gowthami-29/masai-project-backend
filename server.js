@@ -2,6 +2,7 @@ require('dotenv').config()
 const express =require('express')
 const dbConnectionCheck=require('./src/utils/dbHealthCheck')
 const authRoutes=require('./src/routes/auth.routes')
+const aiRoutes =require('./src/routes/ai.routes')
 const expenseRoutes=require('./src/routes/expense.routes')
 const budgetRoutes =require('./src/routes/budget.routes')
 const incomeRoutes=require("./src/routes/income.routes")
@@ -21,6 +22,7 @@ app.use('/api/income',incomeRoutes)
 app.use("/api/recuring",recuringRoutes)
 app.use("/api/split",splitRoutes)
 app.use("/api/summary",summaryRoutes)
+app.use("/api/ai",aiRoutes)
 startScheduler();
 app.listen(PORT,async()=>{
     try {
