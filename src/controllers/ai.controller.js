@@ -23,9 +23,9 @@ Give financial advice and savings suggestions.
 
     const result = await model.generateContent(prompt)
 
-    const text = result.response.text()
+    const texts = result.response.text()
 
-    res.json({ insights: text })
+    res.json({ insights: texts })
 
   } catch (error) {
     console.log("AI ERROR:", error)
