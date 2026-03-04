@@ -22,7 +22,7 @@ app.use('/api/income',incomeRoutes)
 app.use("/api/recuring",recuringRoutes)
 app.use("/api/split",splitRoutes)
 app.use("/api/summary",summaryRoutes)
-app.use("/api/ai",aiRoutes)
+app.use("/api/ai/insights",aiRoutes)
 startScheduler();
 app.listen(PORT,async()=>{
     try {
