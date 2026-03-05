@@ -18,7 +18,11 @@ Income: ${income}
 Expenses: ${expenses}
 Categories: ${categories}
 
-Give financial advice and savings suggestions.
+Analyze the user's spending and provides:
+1. A short financial health summary.
+2. Saving suggestions
+3. Spending improvement tip 
+keep answer in mid range
 `
 
     const result = await model.generateContent(prompt)
