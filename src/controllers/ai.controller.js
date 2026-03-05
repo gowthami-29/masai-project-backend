@@ -18,7 +18,7 @@ Income: ${income}
 Expenses: ${expenses}
 Categories: ${categories}
 
-Give financial advice and savings suggestions.
+Give financial advice and savings suggestions.and some important questions with answer
 `
 
     const result = await model.generateContent(prompt)
